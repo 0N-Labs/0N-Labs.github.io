@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sesame – Bringing the computer to life</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Google Fonts – swap for the exact font stack Sesame uses if you have the license -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* ----------------------------------------------------
+       💡  This stylesheet is an original re‑implementation
+           that closely matches the visual language of
+           sesame.com.  It is NOT a verbatim copy.
+       ---------------------------------------------------- */
+
+    :root {
+      /* spacing scale mirroring the one visible on the site */
+      --s4: 4px;
+      --s8: 8px;
+      --s12: 12px;
+      --s16: 16px;
+      --s18: 18px;
+      --s20: 20px;
+      --s24: 24px;
+      --s28: 28px;
+      --s32: 32px;
+      --s40: 40px;
+
+      /* neutral palette pulled by eye‑dropper from screenshot */
+      --gray-900: #0c0c0d;
+      --gray-700: #4f4f52;
+      --gray-500: #a0a0a4;
+      --border-color: #e4e4e7;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Inter", sans-serif;
+      font-size: 16px;
+      line-height: 1.5;
+      color: var(--gray-900);
+      background: #fff;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* --- Layout ------------------------------------------------------- */
+
+    .layout {
+      display: flex;
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: var(--s40) var(--s28);
+    }
+
+    .sidebar {
+      width: 160px;
+      flex-shrink: 0;
+      display: flex;
+      flex-direction: column;
+      gap: var(--s12);
+    }
+
+    .sidebar nav {
+      display: flex;
+      flex-direction: column;
+      gap: var(--s4);
+    }
+
+    .logo {
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 1;
+      margin-bottom: var(--s16);
+    }
+
+    .main {
+      flex: 1;
+      padding-left: clamp(40px, 6vw, 80px);
+    }
+
+    .section {
+      margin-bottom: 96px; /* matches ~6rem vertical rhythm */
+    }
+
+    h1 {
+      font-size: clamp(32px, 3.2vw, 48px);
+      font-weight: 600;
+      line-height: 1.1;
+      max-width: 12ch;
+    }
+
+    h2 {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: var(--s8);
+    }
+
+    p {
+      max-width: 60ch;
+      margin-top: var(--s16);
+    }
+
+    hr {
+      margin: var(--s32) 0;
+      border: none;
+      border-top: 1px solid var(--border-color);
+    }
+
+    /* --- Media cards -------------------------------------------------- */
+
+    .figure {
+      margin-top: var(--s24);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .figure img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .caption {
+      padding: var(--s12) var(--s16);
+      font-size: 12px;
+      color: var(--gray-700);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .btn-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 14px;
+      padding: var(--s12) var(--s20);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      margin-top: var(--s24);
+      transition: background .2s;
+    }
+
+    .btn-link:hover {
+      background: #f5f5f5;
+    }
+
+    /* --- Responsive team grid ---------------------------------------- */
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: var(--s24);
+    }
+
+    /* --- Footer ------------------------------------------------------- */
+
+    .footer {
+      margin-top: 160px;
+      border-top: 1px solid var(--border-color);
+      padding: var(--s32) 0;
+      text-align: center;
+      font-size: 14px;
+      color: var(--gray-500);
+    }
+
+    /* --- Mobile tweaks ------------------------------------------------ */
+
+    @media (max-width: 768px) {
+      .layout {
+        flex-direction: column;
+        padding: var(--s24) var(--s20);
+      }
+
+      .sidebar {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        width: auto;
+        margin-bottom: var(--s32);
+      }
+
+      .main {
+        padding-left: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="logo">🗝️<br>Sesame</div>
+      <nav>
+        <a href="#">Research</a>
+        <a href="#">Team</a>
+        <a href="#">Preview</a>
+      </nav>
+    </aside>
+
+    <main class="main">
+      <section class="section">
+        <h1>Bringing the computer to life</h1>
+        <p>We believe in a future where computers are lifelike. They will see, hear, and collaborate with us the way we’re used to. A natural human voice is key to unlocking this future.</p>
+        <p><strong>To start, we have two goals.</strong></p>
+      </section>
+
+      <hr>
+
+      <section class="section" id="personal-companion">
+        <span>01</span>
+        <h2>A personal companion</h2>
+        <p>An ever‑present brilliant friend and conversationalist, keeping you informed and organized, helping you be a better version of yourself.</p>
+        <p>Try our research <a href="#">preview</a>.</p>
+
+        <figure class="figure">
+          <!-- 📈 replace with your own asset or pull from the public demo if you have permission -->
+          <img src="images/voice-chart.png" alt="Crossing the uncanny valley of conversational voice">
+          <figcaption class="caption">Crossing the uncanny valley of conversational voice <span>↗︎</span></figcaption>
+        </figure>
+      </section>
+
+      <hr>
+
+      <section class="section" id="lightweight-eyewear">
+        <span>02</span>
+        <h2>Lightweight eyewear</h2>
+        <p>Designed to be worn all day, giving you high‑quality audio and convenient access to your companion who can observe the world alongside you.</p>
+
+        <figure class="figure">
+          <img src="images/eyewear.jpg" alt="Eyewear design sketches">
+        </figure>
+      </section>
+
+      <hr>
+
+      <section class="section" id="join">
+        <h2>Join Sesame</h2>
+        <p>Sesame is an interdisciplinary product and research team focused on making voice companions useful for daily life. Learn more about our <a href="#">team and mission</a>.</p>
+
+        <div class="grid-2" style="margin-top:24px;">
+          <img style="width:100%;border-radius:8px;" src="images/team-1.jpg" alt="Team photo 1">
+          <img style="width:100%;border-radius:8px;" src="images/team-2.jpg" alt="Team photo 2">
+        </div>
+
+        <a class="btn-link" href="#">Careers at Sesame <span style="margin-left:auto;">↗︎</span></a>
+      </section>
+    </main>
+  </div>
+
+  <footer class="footer">
+    <p>Copyright © 2025 Sesame AI. All rights reserved.</p>
+  </footer>
+</body>
+</html>
